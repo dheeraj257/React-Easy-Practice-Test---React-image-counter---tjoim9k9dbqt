@@ -2,9 +2,15 @@ import React, { useState } from 'react'
 import '../styles/App.css';
 import star from '../star.png'
 const App = () => {
+ const [Width,setWidth]= useState(300)
+ const [Height,setHeight]= useState(300)
+const sizechanger=()=>{
+  setWidth(Width+2);
+  setHeight(Height+2)
+}
   return (
     <div id="main">
-      <img src={star}  height="300px" width="300px" />
+      <img onClick={sizechanger} src={star}  height={Height+"px"} width={Width+"px"} />
     </div>
   )
 }
